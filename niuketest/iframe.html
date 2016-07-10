@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+</head>
+
+<body>
+<iframe src="http://localhost:63342/webStudent/niuketest/b.html" name="_iframe" frameborder="1"></iframe>
+<a href="http://www.baidu.com" target="_iframe">韩婷吧</a>
+<ul id="getText"></ul>
+<script>
+    var _iframe=document.getElementsByTagName("iframe")[0];
+    var txt=_iframe.innerHTML;
+    dosome(txt);
+    function dosome(text){
+        document.getElementById("getText").innerHTML= decodeURI(text);
+    }
+</script>
+</body>
+</html>

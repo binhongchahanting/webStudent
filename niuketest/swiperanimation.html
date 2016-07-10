@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jsonp跨域请求</title>
+    <script src="../myproduct/js/swiper-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../myproduct/css/swiper-3.3.1.min.css"/>
+    <script src="../swiper/swiper.animate1.0.2.min.js"></script>
+    <link rel="stylesheet" href="../swiper/animate.min.css"/>
+</head>
+<style>
+    .swiper-container{
+        height:400px;
+        width:500px;
+        background:#dddddd;
+    }
+    .swiper-slide{
+        background:#ff984f;
+    }
+</style>
+<body>
+swiper-animate-effect：切换效果，例如 fadeInUp
+swiper-animate-duration：可选，动画持续时间（单位秒），例如 0.5s
+swiper-animate-delay：可选，动画延迟时间（单位秒），例如 0.3s
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">slider1<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大家好</p></div>
+        <div class="swiper-slide">slider2<p class="ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大家好</p></div>
+        <div class="swiper-slide">slider3<p class="ani" swiper-animate-effect="rubberBand" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大家好</p></div>
+    </div>
+</div>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 500,//可选选项，自动滑动
+        loop:true,
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    })
+</script>
+</body>
+</html>

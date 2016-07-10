@@ -2,33 +2,76 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>jsonp跨域请求</title>
+    <title>jsopn跨域</title>
     <script src="../jquery-1.11.2.js"></script>
-    <script>
-        $(function(){
-            /*var demo=$(".demo");
-            var _input=$("input");
-            var urls="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+"中国"+"&json=1&p=3";
-            $.ajax({
-                url:urls,
-                data:"",
-                "dataType":"jsonp",
-                "success":function(data){
-                    console.log(data);
-                }
-            });*/
-            var str="hhh  jjjj  kkkkkkkkkkkkkkkkkk";
-            var str1=str.slice(0,-1);
-            console.log(str1);
-        });
-    </script>
+    <style>
+        body,li,ul,p{
+            margin:0;
+            padding:0;
+        }
+        section{
+            width:400px;
+            background: #fecab7;
+            margin:40px auto;
+        }
+        input{
+            display:block;
+            height:50px;
+            width:80%;
+            margin:0 auto;
+            border-radius:20px;
+            color:#3c763d;
+            font-size:20px;
+            border:1px solid #ff984f;
+            outline:none;
+        }
+        ul{
+            width:400px;
+            background: #fecab7;
+            display: none;
+        }
+        ul li{
+            height:50px;
+            width:100%;
+            border-bottom:1px solid #909090;
+            line-height:50px;
+            margin:0;
+            list-style: none;
+        }
+        a{
+            text-decoration:none;
+            color:#3c763d;
+        }
+    </style>
 </head>
 <body>
-<a href="####" class="search">
-    <div class="demo">
-        点击索索
-    </div>
-</a>
-<input type="text" value="中国"/>
+    <section>
+        <input type="text" id="hh"/>
+        <ul id="list">
+        </ul>
+    </section>
 </body>
+<script>
+    var _input=document.getElementById("hh");
+    _input.onkeyup=function(){
+    var val=_input.value;//文本框的值
+    var _script=document.createElement('script');
+        _script.src='http://suggestion.baidu.com/su?wd='+val+'&cb=hhl';
+        document.body.appendChild(_script);
+        document.body.removeChild(_script);
+    };
+    function hhl( data ){
+        var oUl = document.getElementById("list");
+        if( data.s.length > 0 ){
+            var str = '';
+            for( var i=0;i<data.s.length;i++){
+                str += "<li><a href=\"https://www.baidu.com/s?word="+data.s[i]+"\">"+data.s[i]+'</a></li>';
+            }
+            oUl.style.display = 'block';
+            oUl.innerHTML = str;
+        }else {
+            oUl.style.display = 'none';
+        }
+    }
+</script>
 </html>
