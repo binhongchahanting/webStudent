@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>flex作业</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .clear:after{
+            clear:both;
+            overflow:hidden;
+            display:block;
+        }
+        section{
+            width:60%;
+            margin:5% auto;
+            border:30px solid #333333;
+            box-sizing:content-box;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: space-around;
+        }
+        header{
+            width:100%;
+            text-align:center;
+            line-height:49px ;
+            font-size:20px;
+            color:#333;
+            font-weight:700;
+            background:#ddd;
+            padding-bottom:5px;
+        }
+        article{
+            margin:5px 0;
+            line-height:98px;
+            width:99.5%;
+            text-align: center;
+            font-size:20px;color:#333;
+            font-weight:900;
+            border:3px solid #aaa;
+        }
+        .mid{
+            height:228px;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:space-between;
+            width:97%;
+            margin:5px 0;
+        }
+        .mid .one{
+            height:100%;
+            width:50%;
+            background:#B9E2ED;
+            box-shadow: 0 0 5px #B9E2ED;
+        }
+        .mid .son{
+            height:100%;
+            width:48%;
+            display:flex;
+            flex-flow:column wrap;
+            justify-content: space-between;
+        }
+        .mid .son .two{
+            height:48%;
+            width:100%;
+            background: #B9E2ED;
+            box-shadow: 0 0 5px #B9E2ED;
+        }
+        .midb{
+            height:228px;
+            width:97%;
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+        }
+        .midb .son{
+            height:100%;
+            width:24%;
+            background:#AAECBF;
+            box-shadow:0 0 5px #AAECBF;
+        }
+        .pink{
+            height:138px;
+            width:97%;
+            display:flex;
+            margin:5px 0;
+            justify-content:space-between;
+        }
+        .pink .pink1{
+            height:100%;
+            width:49.5%;
+            background:#F7BAB9;
+            box-shadow:0 0 5px #F7BAB9;
+        }
+        .u{
+            height:98px;
+            width:97%;
+            display:flex;
+            justify-content:space-between;
+        }
+        .u .son{
+            height:100%;
+            width:32%;
+            background:#9082BB;
+            box-shadow:0 0 5px #9082BB;
+        }
+        .bot{
+            height:78px;
+            width:98%;
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+        }
+        .bot .son{
+            height:80%;
+            width:22%;
+            border:3px solid #656565;
+            align-self:center;
+        }
+    </style>
+</head>
+<body>
+    <section >
+        <header>我是标题</header>
+        <article>
+            我是banner
+        </article>
+        <div class="mid">
+            <div class="one"></div>
+            <div class="son">
+                <div class="two"></div>
+                <div class="two"></div>
+            </div>
+        </div>
+        <div class="midb">
+            <div class="son"></div>
+            <div class="son"></div>
+            <div class="son"></div>
+            <div class="son"></div>
+        </div>
+        <div class="pink">
+            <div class="pink1"></div>
+            <div class="pink1"></div>
+        </div>
+        <div class="u">
+            <div class="son"></div>
+            <div class="son"></div>
+            <div class="son">
+            </div>
+        </div>
+        <div class="bot">
+            <div class="son"></div>
+            <div class="son"></div>
+            <div class="son"></div>
+            <div class="son"></div>
+        </div>
+    </section>
+</body>
+</html>

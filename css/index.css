@@ -1,0 +1,19 @@
+body,ul,li{
+	margin: 0;padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+html,body{
+	height: 100%;
+	/*overflow: hidden;*/
+	/*overflow-x: hidden;*/
+
+}
+
+
+/*em表示继承的父元素或者自己的font-size的倍数
+  rem表示html的font-size的倍数
+*/

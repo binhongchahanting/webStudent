@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .demo{
+            height:600px;
+            width:600px;
+            border:1px solid #f78;
+            display:flex;
+            box-sizing:content-box;
+            flex-direction:row;
+            flex-wrap:nowrap;
+        }
+        .son{
+            height:200px;
+            width:200px;
+            border:1px solid #1fa6c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="son">1</div>
+        <div class="son" style="flex-basis:50%;">2</div>
+        <div class="son">3</div>
+        <div class="son">4</div>
+
+    </div>
+</body>
+<script src="jquery-1.11.2.js"></script>
+<script type="text/javascript" src="http://fw.qq.com/ipaddress" charset="gb2312"></script>
+<script>
+    $(document).ready(function(){
+        $("#ip").val(IPData[0]);
+        $("#add").val(IPData[2]);
+    });
+</script>
+
+</html>

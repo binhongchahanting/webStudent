@@ -1,0 +1,159 @@
+.go{
+    display:block;
+    position:absolute;
+    top:20%;
+    right:20px;
+    height:60%;
+    width:17vw;
+    background:#f45782;
+    border-radius:10px;
+    text-align: center;
+    line-height:30px;
+    color:#fafafa;
+    font-weight: 600;
+    box-shadow: 0 0 5px #ff3aa9;
+    font-size:3.5vw;
+    text-decoration: none;
+}
+.title{
+    width:100%;
+    height:50px;
+    background:#333;
+}
+.title p{
+    line-height:50px;
+    color:#fafafa;
+    font-size:3.5vw;
+    font-weight:700;
+    padding-right:0; height:50px;
+}
+.title ._mony .money{
+    color:#ff3aa9;
+    font-size:4.5vw;
+    margin-left:2%;
+}
+.title ._mony span{
+
+}
+.title ._mony{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-start;
+}
+._hid{
+    height:50px !important;
+}
+.main{
+    line-height:6vw;
+    color:#333;
+    font-size:3.5vw;
+    font-weight:600;
+    padding-top:3vw !important;
+    padding-bottom: 3vw !important;
+    border-bottom:1px solid #999;
+    box-shadow: 0 0 5px #828282;
+
+}
+.main .pic img{
+    max-width:100%;
+}
+.main .p1 .iconfont{
+    float:right;
+}
+.main .p3 span:nth-of-type(1){
+    margin-left:4vw;
+}
+.main .p3 span{
+    color:#e22b63;
+    font-size:4.5vw;
+}
+.main .p3 .code{
+    float:right;
+    color:#222222;
+}
+.main .p4{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-start;
+}
+.main .p4 span{
+    display:block;
+    width:30%;
+}
+.main .p4 .reduce{
+    width:15%;
+    background:linear-gradient(#828282 60%, #3f3f3f);
+    border-radius:2vw;
+    font-size:5vw;
+    text-align:center;
+    color:#fff;
+}
+.main .p4 ._numb{
+    width:25%;
+    border-radius:2vw;
+    border:1px solid #adadad;
+    text-align: center;
+    color:#333;
+    font-size:4vw;
+    margin:0 1vw;
+}
+.main .p4 .add{
+    width:15%;
+    background:linear-gradient(#828282 60%, #3f3f3f);
+    border-radius:2vw;
+    font-size:4vw;
+    text-align:center;
+    color:#fff;
+}
+.scrollline{
+    left:40%;
+}
+footer #_number{
+    display:block;
+    height:15px;
+    width:15px;
+    background:#e22b63;
+    border-radius:50%;
+    color:#fff;
+    text-align:center;
+    line-height:15px;
+    position:absolute;
+    right:24px;
+    top:2px;
+}
+footer .car .goCar{
+    position:relative;
+    display:block;
+}
+._replace h2{
+    color:#333;
+    font-size:5vw;
+    text-align: center;
+   margin-top:50px;
+    margin-bottom:30px;
+    font-weight:600;
+}
+._replace p{
+    text-align:center;
+    margin-bottom:80px;
+}
+._replace p img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+._replace #shopping{
+    display:block;
+    height:70px;
+    width:80%;
+    border-radius:4vw;
+    background:#e22b63;
+    color:#fafafa;
+    text-align:center;
+    line-height:70px;
+    font-weight:600;
+    cursor: pointer;
+    font-size:5vw;
+    text-decoration:none;
+}

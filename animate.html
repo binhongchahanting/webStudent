@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动画效果</title>
+    <style>
+        .aimate{
+            height:149px;
+            width:134px;
+            box-shadow:0 0 10px #333;
+            margin:10% auto;
+            background:url(img/firegod/1.jpg) no-repeat 0 0 ;
+            animation: a 1s step-end 0s infinite ;
+        }
+        @keyframes a{
+            0%{
+                background-position:0 0;
+            }
+            6.67%{
+                background-position:-134px 0;
+            }
+            13.3%{
+                background-position:-268px 0;
+            }
+            20%{
+                background-position:-402px 0;
+            }
+            26.7%{
+                background-position:-536px 0;
+            }
+
+            33.3%{
+                background-position:0px -149px;
+            }
+           40%{
+                background-position:-134px -149px;
+            }
+            46.7%{
+                background-position:-268px -149px;
+            }
+            53.3%{
+                background-position:-402px -149px;
+            }
+            60%{
+                background-position:-536px -149px;
+            }
+
+            66.7%{
+                background-position:0px -298px;
+            }
+            73.3%{
+                background-position:-134px -298px;
+            }
+            80%{
+                background-position:-268px -298px;
+            }
+            86.7%{
+                background-position:-402px -298px;
+            }
+            93.3%{
+                background-position:-536px -298px;
+            }
+            100%{
+                background-position:0px 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="aimate">
+
+    </div>
+</body>
+<script>
+    var x=1/15;
+    var str="";
+    for(var i=1;i<16;i++){
+        str+=x*i*100+"%,"
+    }
+    console.log(str);
+    alert(268+134)
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>音乐播放器</title>
+    <script src="jquery-1.11.2.js"></script>
+    <script src="js/media.js"></script>
+    <style>
+        body,ul,li,p,h1,h2,h3,h4,h5{
+            margin:0;padding:0;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        li{
+            list-style:none;
+        }
+        body{
+            background:linear-gradient(#9f6ec1,#72ffad);
+            height:100vh;
+        }
+        .song{
+            width: 100%;
+            border-bottom:1px solid #AAECBF;
+            box-shadow: 0 0 5px #9f8;
+            line-height:2em;
+            font-size:1.2em;
+            color:#fff;
+            font-weight:900;
+            padding:15px;
+        }
+        .on{
+            background: #ff8850;
+            transition: all 0.3s ease 0s;
+        }
+        footer{
+            background:#ff8850;
+            padding:15px;
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+            align-items: center;
+        }
+        footer img{
+            height:15vh;
+            width:15vh;
+        }
+        footer .pro{
+            width:25vh;
+            height:5px;
+            background:#08daff;
+            position:relative;
+        }
+        footer span{
+            display:block;
+            padding:3px;
+            text-align: center;
+            background:radial-gradient(#656eff, #c6a2ed);
+            cursor:pointer;
+            color:#fff;
+        }
+        footer ._volume{
+            width:25vh;
+            height:5px;
+            background:#08daff;
+            position:relative;
+        }
+        footer b{
+            display:block;
+            height:20px;
+            width:8px;
+            border-radius:3px;
+            background:#9f6ec1;
+            position:absolute;
+            top:-9px;
+            transition: all 0.2s linear 0s;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<audio id="audio" src="audio/1.mp3"></audio>
+<div class="song on">第一首歌</div>
+<div class="song">第二首歌</div>
+<div class="song">第三首歌</div>
+<footer>
+    <img src="audio/1.jpg" alt="图片" class="_img"/>
+    <span class="start">播放</span>
+    <span class="add">上一首</span>
+    <span class="reduce">下一首</span>
+    <div class="pro">
+        <b id="one"></b>
+    </div>
+    <span class="voice">声音</span>
+    <div class="_volume">
+        <b id="two"></b>
+    </div>
+</footer>
+</body>
+</html>

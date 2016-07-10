@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    body{
+        background: #333;
+    }
+    ul{
+        margin: 0;padding: 0;
+    }
+    section{
+        width: 100%;
+    }
+    section li{
+        list-style: none;
+        width: 100%;padding: 20px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+    }
+    section .on{
+        background: #b8beff;
+    }
+    footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+    footer *{
+        display: block;
+        float: left;
+    }
+    footer img{
+        width: 10%;
+        height: 10vw;
+    }
+</style>
+<audio id="audio" src=""></audio>
+<body>
+    <section class="conbody">
+        <ul>
+        </ul>
+    </section>
+<footer>
+    <img src="1.jpg" alt=""/>
+    <button id="play">播放</button>
+    <button id="before">上一首</button>
+    <button id="after">下一首</button>
+    <input id="pro" type="range" value="0" min="0"/>
+    <label >音量</label>
+    <input id="voil" type="range" min="0" max="10" value="5"/>
+</footer>
+</body>
+<script src="jquery.js"></script>
+<script src="demo1.js"></script>
+</html>

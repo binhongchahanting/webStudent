@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>第二个页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <script src="../jquery-1.11.2.js"></script>
+    <script src="swiper-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="swiper-3.3.1.min.css"/>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+    <style>
+        li{
+            list-style:none;
+        }
+        .container-fluid,.row,.container,body{
+            margin:0;padding:0;
+        }
+        .swiper-slide img{
+            max-width:100%;
+        }
+        .swiper-pagination-bullet{
+            background: #2c32ff;
+            height:1.5vw;
+            width:1.5vw;
+        }
+        .swiper-pagination{
+            bottom:2vw !important;
+        }
+        header{
+            position:relative;
+        }
+        .top_nav{
+            position:absolute;
+            top:0;
+            width:100%;
+            z-index:777;
+        }
+        .list li a{
+            color:#fff;
+            font-size:1.5vw;
+            display: block;
+            padding:0.4vw 1vw;
+            border-radius: 1vw;
+            text-decoration: none;
+            transition: all 0.5s ease 0s;
+        }
+        .list{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content: space-around;
+            margin-top:2vw;
+        }
+        .red{
+            padding:0.4vw 1vw;
+            background:#f56;
+            border-radius: 1vw;
+        }
+        .log img{
+            margin-top:1.5vw;
+            max-width: 100%;
+            min-width: 44px;
+        }
+        .menu img{
+            max-width:100%;
+            height:auto;
+            display:block;
+            margin-top:2vw;
+            min-width: 10px;
+        }
+        ._hid{
+            position:absolute;
+            z-index:200;
+            top:0;
+            left:0;
+            height:100vh;
+            width:100vw;
+            background: #192d03;
+            padding: 10vw;
+            display:none;
+            overflow-y:hidden;
+        }
+        ._hid li{
+            width:60%;
+            border-bottom:1px dashed #f7f7f7;
+            margin: 1vw auto;
+            line-height:8vw;
+        }
+        ._hid li a{
+            color:#fff;
+        }
+        ._hid li a:hover{
+            text-decoration: none;
+        }
+    .midbox{
+        width:83%;
+        margin:0 auto;
+        margin-top:50px;
+    }
+        .pic{
+            margin-bottom: 30px;
+        }
+        ._text h2{
+            line-height:5vw;
+            font-size:3vw;
+        }
+        ._text span:first-of-type{
+            color:#f56;
+            display:block;
+            line-height:3vw;
+        }
+        ._text p{
+            color:#666;
+            margin:0;
+            padding:0;
+            font-size:1.3vw;
+        }
+        ._text span:last-of-type{
+            display:block;
+            color:#fff;
+            text-align:center;
+            line-height:3vw;
+            background:#f56;
+            width:10vw;
+            margin-top:3vw;
+            margin-bottom:50px;
+            font-weight:500;
+            cursor:pointer;
+            font-size:0.9vw;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!--导航-->
+        <div class="container-fluid top_nav">
+            <div class="row">
+                <div class="_top col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="log col-xs-2">
+                            <img src="img/Uihero.png" alt=""/>
+                        </div>
+                        <ul class="col-xs-6 col-xs-offset-4 list hidden-xs">
+                            <li><a class="red" href="###">news</a></li>
+                            <li><a href="####">aboutus</a></li>
+                            <li><a href="###">contactus</a></li>
+                            <li><a href="####">home</a></li>
+                            <li><a href="###">tel</a></li>
+                            <li><a href="###">email</a></li>
+                        </ul>
+                        <div class="menu visible-xs col-xs-1 col-xs-offset-8">
+                            <img src="img/list.gif" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="_hid hidden-sm">
+            <li><a href="###">news</a></li>
+            <li><a href="####">aboutus</a></li>
+            <li><a href="####">contactus</a></li>
+            <li><a href="####">home</a></li>
+            <li><a href="###">tel</a></li>
+            <li><a href="###">email</a></li>
+        </ul>
+        <!--轮播图-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/slider-&-header-Bg.png" alt=""/></div>
+                <div class="swiper-slide"><img src="img/slider-&-header-Bg.png" alt=""/></div>
+                <div class="swiper-slide"><img src="img/slider-&-header-Bg.png" alt=""/></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </header>
+<section class="container midbox">
+    <div class="row">
+        <div class="pic col-xs-12 col-sm-6 ">
+            <img  class="img-responsive" src="img/iMac.png" alt=""/>
+        </div>
+        <div class="_text col-xs-12 col-sm-5 col-sm-offset-1">
+               <h2>web mobil loging page!</h2>
+               <span>simple simple simple</span>
+            <p>
+                simple simple simplesimple simple simple simple simple simplewwwwsimple
+                simple simple simplesimple simple simple
+            </p>
+            <span>
+                readmore
+            </span>
+        </div>
+    </div>
+</section>
+    <section class="container midbox">
+        <div class="row">
+            <div class="pic col-xs-12 col-sm-6 ">
+                <img  class="img-responsive" src="img/iMac.png" alt=""/>
+            </div>
+            <div class="_text col-xs-12 col-sm-5 col-sm-offset-1">
+                <h2>web mobil loging page!</h2>
+                <span>simple simple simple</span>
+                <p>
+                    simple simple simplesimple simple simple simple simple simplewwwwsimple
+                    simple simple simplesimple simple simple
+                </p>
+            <span>
+                readmore
+            </span>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    var mySwiper=new Swiper(".swiper-container",{
+        autoplay:1000,
+        loop:true,
+        pagination:".swiper-pagination",
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        paginationClickable:"true"
+    });
+    $(".menu").click(function(){
+        $("._hid").slideToggle("slow");
+    });
+    $(".list").children("li").each(function(i){
+        $(this).children("a").hover(function() {
+            $(this).parent("li").siblings("li").children("a").removeClass("red");
+            $(this).addClass("red");
+        },function(){});
+    });
+</script>
+</html>

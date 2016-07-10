@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>localStorage</title>
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        function a(obj){
+            alert(obj);
+        }
+        function b(obj){
+            console.log(obj);
+        }
+        $(document).ready(function(){
+            $("input").click(function(){
+
+               /* localStorage.setItem("ht","12345");
+                localStorage.setItem("hh","12345");
+                localStorage.setItem("tt","12345");
+                localStorage.clear();*/
+                var arr=[{
+                    "hh":"12345",
+                    "ht":"12345",
+                    "tt":"12345"
+                }];
+                a(typeof JSON.stringify(arr));
+                localStorage.setItem("ht",JSON.stringify(arr));
+               b(JSON.parse(localStorage.getItem("ht")));
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="按钮"/>
+</body>
+</html>

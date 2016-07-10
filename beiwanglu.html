@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>备忘录</title>
+    <script src="jquery-1.11.2.js"></script>
+    <script src="js/beiwanglu.js"></script>
+    <style>
+        body,ul,li,ol,h1,h2,h3,h4,h5,p{
+            margin:0;padding:0;
+        }
+        *{
+            box-sizing:border-box;
+        }
+        aside{
+            width:40%;
+            float:left;
+            border:1px solid #333333;
+            padding:15px;
+            display:none;
+            background:radial-gradient(#AAECBF,#9f6ec1);
+            border-radius:10px;
+        }
+        aside label{
+            height:40px;
+            line-height:40px;
+            font-weight:bold;
+        }
+        aside input,aside textarea{
+            width:90%;
+            margin:5px 0;
+            border-radius:10px;
+            border:1px solid #333333;
+        }
+        aside input{
+            height:40px;
+            outline:none;
+        }
+        aside *{
+            display:block;
+        }
+        header{
+            padding:15px;
+            box-shadow: 0 0 10px #333;
+        }
+        header h1{
+            padding:10px;
+            text-align: center;
+        }
+        section{
+            width:60%;
+            float:left;
+            padding:15px;
+        }
+        section .tem{
+            width:90%;
+            border:1px solid #333333;
+            border-radius:10px;
+            padding:10px;
+            margin:10px 0;
+            position:relative;
+            background:radial-gradient(#9f6ec1,#AAECBF)
+        }
+        section .tem *{
+            margin-bottom:5px;
+        }
+        section .tem input{
+            position:absolute;
+            right:30px;
+            top:10px;
+            border-radius: 5px;
+            height:30px;
+            width:50px;
+            border:1px solid #9f6ec1;
+            box-shadow: 0 0 15px #9f6ec1;
+            background:#9f6ec1;
+            color:#fff;
+        }
+        section .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>备忘录</h1>
+    </header>
+    <aside>
+        <form>
+            <label for="">标题</label>
+            <input type="text"/>
+            <label for="">时间</label>
+            <input type="date"/>
+            <label>内容</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="提交"/>
+            <input type="reset" value="重置"/>
+            <input type="button" value="删除全部"/>
+        </form>
+    </aside>
+<section>
+    <div class="tem hidden">
+        <h3>标题</h3>
+        <h5>时间</h5>
+        <p>内容内容</p>
+        <input type="button" value="删除"/>
+    </div>
+</section>
+</body>
+</html>

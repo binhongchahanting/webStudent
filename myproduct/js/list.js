@@ -1,0 +1,17 @@
+$(function(){
+    $(".btn").each(function(i){
+        $(this)[0].addEventListener("touchstart",function(){
+            if($(this).parent("p").siblings("ul").length>0){
+                console.log($(this).parent("p").siblings("ul"));
+                $(this).parent("p").siblings("ul").slideToggle("slow");
+                if(parseFloat($(this).parent("p").siblings("ul").css("height"))!=1){
+                    $(this).removeClass("icon-z01");
+                    $(this).addClass("icon-jiantou");
+                }else{
+                    $(this).removeClass("icon-jiantou");
+                    $(this).addClass("icon-z01");
+                }
+            }
+        });
+    })
+});

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>高圆圆</title>
+    <style>
+        body{
+            height:100vh;
+            background:radial-gradient(#1fa6c1,#cccccc);
+        }
+        .stage{
+            height:300px;
+            width:1000px;
+            position:absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            perspective: 3000px;
+            transform-style:preserve-3d;
+            animation: meinv 8s linear 0s infinite;
+        }
+        .stage div{
+            width:200px;
+            height:100%;
+            box-shadow: 0 0 15px #aaa;
+            float:left;
+            position:absolute;
+            left:50%;
+            top:0;
+            margin-left:-100px;
+            background:url(img/long1.jpg) no-repeat center;
+        }
+        @keyframes meinv {
+            0%{
+                transform:rotateX(-10deg) rotateY(0deg);
+            }
+            50%{
+                transform:rotateX(10deg) rotateY(180deg);
+            }
+            100%{
+                transform:rotateX(-10deg) rotateY(360deg);
+            }
+        }
+        .stage div:nth-child(1){
+            transform:rotateY(0deg) translateZ(400px);
+        }
+        .stage div:nth-child(2){
+            transform:rotateY(36deg) translateZ(400px);
+        }
+        .stage div:nth-child(3){
+            transform:rotateY(72deg) translateZ(400px);
+        }
+        .stage div:nth-child(4){
+            transform:rotateY(108deg) translateZ(400px);
+        }
+        .stage div:nth-child(5){
+            transform:rotateY(144deg) translateZ(400px);
+        }
+        .stage div:nth-child(6){
+            transform:rotateY(180deg) translateZ(400px);
+        }
+        .stage div:nth-child(7){
+            transform:rotateY(216deg) translateZ(400px);
+        }
+        .stage div:nth-child(8){
+            transform:rotateY(252deg) translateZ(400px);
+        }
+        .stage div:nth-child(9){
+            transform:rotateY(288deg) translateZ(400px);
+        }
+        .stage div:nth-child(10){
+            transform:rotateY(324deg) translateZ(400px);
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+section{
+    width:80%;
+    margin:0 auto;
+    border:1px solid #adadad;
+    border-radius:10px;
+}
+._hid{
+    height:50px !important;
+}
+section ul{
+    width:100%;
+}
+section ul li{
+    border-bottom:1px solid #dedede;
+    overflow:hidden;
+}
+section ul li a{
+    color:#333;
+    display:block ;
+    float: left;
+    text-decoration: none;
+    font-size:1.5rem;
+    text-indent:1rem;
+    line-height:14.5vw;
+    font-weight:800;
+}
+section ul li a:hover{
+    color:#333333;
+    text-decoration:none !important;
+}
+section ul li span{
+    float:right;
+    font-size:3rem;
+    line-height:14.5vw;
+    margin-right:8px;
+}
+.mid{
+    margin-top:12vw;
+    margin-bottom:5vw;
+}
+.scrollline{
+    left:60%;
+}
+body{
+    overflow: hidden;
+}
+._btn{
+    height:12vw;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    line-height:12vw;
+    color:#fff;
+    background:linear-gradient(#f55a86,#dd1f5b);
+    border-radius:10px;
+    margin-left:10vw;
+    margin-top:11vw;
+    font-weight:800;
+    font-size:2.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 5vw #fe8e94;
+}
+

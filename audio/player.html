@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="player.css"/>
+</head>
+<body>
+    <audio id="audio" src=""></audio>
+    <section>
+        <ul>
+            <li class="on">第一首歌</li>
+            <li>第二首歌</li>
+            <li>第三首歌</li>
+        </ul>
+    </section>
+
+    <footer>
+        <img src="1.jpg" alt=""/>
+        <input id="play" type="button" value="播放"/>
+        <input id="before" type="button" value="上一首"/>
+        <input id="after" type="button" value="下一首"/>
+        <input id="pro" type="range" value="0" min="0" step="1"/>
+        <label for="">音量</label>
+        <input id="voice" type="range" value="0.5" min="0" max="1" step="0.1"/>
+    </footer>
+</body>
+<script src="jquery.js"></script>
+<script src="player.js"></script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+
+        function aa(x){
+            var str="";
+            while(x>1) {
+                str+=x%2;
+                    x=parseInt(x/2);
+                if(x==1) {
+                    str += 1;
+                    str=str.split("");
+                    str=str.reverse();
+                    str=str.join("");
+                    return str;
+                }
+               }
+            }
+        alert(aa(10));
+        var num=302;
+        var a=parseInt(num).toString(16);
+        alert(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

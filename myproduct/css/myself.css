@@ -1,0 +1,102 @@
+body{
+    overflow: hidden;
+}
+._hid{
+    height:50px !important;
+}
+.self{
+    padding:30px !important;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.self .icon{
+    display:block;
+    padding-left:0 !important;
+}
+.self .icon img{
+    margin:0 auto;
+    display:block;
+    width:80%;
+}
+.self div {
+    padding-left:0 !important;
+}
+.self div p{
+    font-size:4.5vw;
+    color:#333;
+    font-weight:900;
+}
+.self div p:nth-of-type(2){
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    width:100%;
+}
+.self div #load{
+    display:block;
+    height:7vw;
+    width:45%;
+    background:#e4366b;
+    color:#fff;
+    text-align:center;
+    line-height:7vw;
+    border-radius:8px;
+    text-decoration:none;
+}
+.self div #login{
+    display:block;
+    height:7vw;
+    width:45%;
+    background:#e4366b;
+    color:#fff;
+    text-align:center;
+    line-height:7vw;
+    border-radius:8px;
+    text-decoration:none;
+}
+._name{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: space-between;
+    height:26vw;
+}
+.main{
+
+    border:1px solid #dedede;
+    border-radius:20px;
+    width:80%;
+    margin:0 auto !important;
+    margin-top:60px !important;
+}
+
+.main ul li {
+    overflow: hidden;
+    border-bottom:1px solid #dedede;
+
+}
+.main ul li a {
+    display:block;
+    float:left;
+    color:#333;
+    text-align:left;
+    text-decoration: none;
+    height:12vw;
+    line-height:12vw;
+    text-indent: 4vw;
+    font-size:4vw;
+    font-weight:600;
+    width:80%;
+}
+.main ul li span{
+    float:right;
+    color:#ddd;
+    font-size:5vw;
+    height:12vw;
+    line-height:12vw;
+    margin-right:4vw;
+}
+.scrollline{
+    left:60%;
+}

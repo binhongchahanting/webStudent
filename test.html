@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.2.js"></script>
+    <style>
+        .demo{
+            height:200px;
+            width:200px;
+            background:#1fa6c1;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="demo"></div>
+</body>
+<script>
+    var i=0;
+   $(".demo").click(function(){
+       alert(i);
+       i++;
+   });
+</script>
+</html>

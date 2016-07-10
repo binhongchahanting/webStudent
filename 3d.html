@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3d</title>
+    <style>
+       body{
+           height:100vh;
+           background:radial-gradient(#cccccc,#ff8850);
+           overflow: hidden;
+       }
+    .stage{
+        height:200px;
+        width:200px;
+      /*  border:1px solid #ff5566;*/
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+        transform:rotateY(0deg) rotateX(0deg);
+        transform-style:preserve-3d;
+        perspective:6000px;
+        animation: rotate 3s linear 0s infinite;
+    }
+    @keyframes rotate {
+        100%{
+            transform:rotateY(360deg) rotateX(360deg);
+        }
+    }
+    @keyframes rotate1{
+        100%{
+            transform:translateZ(200px);
+        }
+    }
+       @keyframes rotate2{
+           100%{
+               transform:translateZ(-200px);
+           }
+       }
+       @keyframes rotate3{
+           100%{
+               transform:rotateY(90deg) translateZ(200px);
+           }
+       }
+       @keyframes rotate4{
+           100%{
+               transform:rotateY(-90deg) translateZ(200px);
+           }
+       }
+       @keyframes rotate5{
+           100%{
+               transform:rotateX(90deg) translateZ(200px);
+           }
+       }
+       @keyframes rotate6{
+           100%{
+               transform:rotateX(-90deg) translateZ(200px);
+           }
+       }
+    .stage div{
+        height:100%;
+        width:100%;
+        border:1px solid #fff;
+        position:absolute;
+        background:radial-gradient(#1fa6c1,#ff5566);
+        opacity:0.8;
+        text-align: center;
+        line-height: 10em;
+        color:#fff;
+        font-weight:600;
+        transition: all .5s ease;
+    }
+        .stage div:first-child{
+                transform:translateZ(100px);
+            animation: rotate1 1s linear 0s infinite alternate;
+        }
+        .stage div:nth-child(2){
+              transform:translateZ(-100px);
+            animation: rotate2 1s linear 0s infinite alternate;
+        }
+        .stage div:nth-child(3){
+            transform:rotateY(90deg) translateZ(100px);
+            animation: rotate3 1s linear 0s infinite alternate;
+        }
+       .stage div:nth-child(4){
+           transform:rotateY(-90deg) translateZ(100px);
+           animation: rotate4 1s linear 0s infinite alternate;
+       }
+       .stage div:nth-child(5){
+           transform:rotateX(90deg) translateZ(100px);
+           animation: rotate5 1s linear 0s infinite alternate;
+       }
+       .stage div:nth-child(6){
+           transform:rotateX(-90deg) translateZ(100px);
+           animation: rotate6 1s linear 0s infinite alternate;
+       }
+     /* .stage:hover div:first-child{
+          transform:translateZ(200px);
+      }
+       .stage:hover div:nth-child(2){
+           transform:translateZ(-200px);
+       }
+       .stage:hover div:nth-child(3){
+           transform:rotateY(90deg) translateZ(200px);
+       }
+       .stage:hover div:nth-child(4){
+           transform:rotateY(-90deg) translateZ(200px);
+       }
+       .stage:hover div:nth-child(5){
+           transform:rotateX(90deg) translateZ(200px);
+       }
+       .stage:hover div:nth-child(6){
+           transform:rotateX(-90deg) translateZ(200px);
+       }*/
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div>正面</div>
+    <div>反面</div>
+    <div>左面</div>
+    <div>右面</div>
+    <div>上面</div>
+    <div>下面</div>
+</div>
+</body>
+</html>

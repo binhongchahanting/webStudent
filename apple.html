@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>苹果</title>
+    <meta name="viewport" content="width=devic-width,initial-scale=1.0">
+    <link rel="stylesheet" href="fonts/iconfont.css"/>
+    <script src="jquery-1.11.2.js"></script>
+    <script src="js/apple.js" type="text/javascript"></script>
+       <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-size:0.75em;
+            font-family:"微软雅黑";
+            color:#fff;
+        }
+        body,ul,li,p,h1,h2,h3{
+            margin:0;padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            outline: none;
+            color:#fff;
+            font-size:1.2em;
+        }
+         nav{
+             line-height:44px;
+             width:100%;
+             height:44px;
+             position: relative;
+             background:#333;
+           }
+          .nav1{
+              height:100%;
+              background:#333;
+              width:1000px;
+              display:flex;
+              flex-flow:row nowrap;
+              justify-content: space-around;
+              margin:0 auto;
+          }
+          .nav1 li{
+              width:11%;
+          }
+          .nav1 li a{
+              display:block;
+              width:100%;
+              line-height:44px;
+              text-align:center;
+              transition:all 0.3s ease 0s;
+          }
+        .nav1 a:hover{
+           color:#aaa;
+        }
+          /*第一步0-最小临界的时候的状态*/
+        .nav1{
+        visibility: hidden;
+        }
+        .nav2{
+            background:#000;
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            z-index:0;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: space-between;
+        }
+        .nav2 li{
+            height:100%;
+            width:44px;
+            transition: all 0.3s linear 0s;
+        }
+        .nav2 li a {
+            display: block;
+            line-height: 44px;
+            width:44px;
+            text-align: center;
+            font-size:16px;
+            transition:all 0.3s linear 0s;
+        }
+        .nav2 li a:hover{
+            color:#aaa;
+        }
+        .nav3{
+            position:absolute;
+            width:100%;
+            height:0;
+            background:#000;
+            top:44px;
+            left:0;
+            overflow: hidden;
+            z-index:5;
+            transition: all 0.5s linear 0s;
+        }
+        .nav3 li a{
+            width:85%;
+            margin:0 auto;
+            text-align: left;
+            border-bottom:1px solid #333333;
+            font-size:14px;
+            font-weight:100;
+            display:block;
+            line-height:46px;
+            transition:all 0.3s linear 0s;
+        }
+        .nav3 li:last-child a{
+            border-bottom:1px solid #fff;
+        }
+        .nav3 li a:hover{
+            color:#aaa;
+        }
+        section:nth-of-type(2){
+            position:relative;
+            width:100%;
+            height:347px;
+            overflow: hidden;
+        }
+        .banner{
+            width:400%;
+            height:115%;
+            position:absolute;
+            top:-44px;
+            left:0;
+            z-index:-1;
+        }
+        .banner .bannerPic{
+            height:100%;
+            width:25%;
+            float:left;
+        }
+        .banner .bannerPic:first-child{
+            background:url("img/tim1.jpg") 50% 30% no-repeat;
+        }
+        .banner .bannerPic:nth-child(2){
+            background:url("img/phone1.jpg") center no-repeat;
+        }
+        .banner .bannerPic:nth-child(3){
+            background:url("img/watch1.jpg") center no-repeat;
+        }
+        .banner .bannerPic:nth-child(4){
+            background:url("img/tv1.jpg") center no-repeat;
+        }
+         .left{
+            height:128px;
+            width:67px;
+            background:url("img/jiantou1.png") center;
+            background-size: cover;
+            position:absolute;
+             top:50%;
+             margin-top:-64px;
+             left:5%;
+             z-index:1;
+             opacity:0;
+             transition: all 0.3s linear 0s;
+        }
+         .right{
+            height:128px;
+            width:67px;
+            background:url("img/jiantou2.png") center;
+            background-size: cover;
+             position:absolute;
+             top:50%;
+             margin-top:-64px;
+             right:5%;
+             z-index:1;
+             opacity:0;
+             transition: all 0.3s linear 0s;
+        }
+         .btn {
+             height:12px;
+             width:200px;
+             position:absolute;
+             top:92%;
+             left:50%;
+             margin-left:-100px;
+             display:flex;
+             flex-flow: row nowrap;
+             justify-content:space-around;
+         }
+
+         .btn span{
+             display:block;
+             height:100%;
+             width:12px;
+           /*  border:1px solid #08daff;*/
+             border-radius:50%;
+             background:#aaaaaa;
+         }
+        .btn .span{
+              border:1px solid #08daff;
+            background:#fff;
+        }
+        .btn span:hover{
+            background:#666;
+            transition: all 0.2s linear 0s;
+        }
+        section:nth-of-type(3){
+            width:100%;
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:space-around;
+            overflow:hidden;
+        }
+        section:nth-of-type(3) .son{
+            float:left;
+            height:200px;
+            width:99%;
+            margin-bottom:3px;
+        }
+        section:nth-of-type(3) .son:first-child{
+            background:url(img/hp2.jpg) center no-repeat;
+        }
+        section:nth-of-type(3) .son:nth-child(2){
+            background:url(img/ipad2.jpg) center no-repeat;
+        }
+        section:nth-of-type(3) .son:nth-child(3){
+            background:url(img/6s2.jpg) center no-repeat;
+        }
+        section:nth-of-type(3) .son:nth-child(4){
+            background:url(img/watch2.jpg) center no-repeat;
+        }
+        footer{
+            width:100%;
+            background:#F2F2F2;
+        }
+        footer .top{
+            height:0;
+            overflow:hidden;
+        }
+        footer .top .son{
+            height:100%;
+            width:19.5%;
+            text-align:left;
+        }
+        footer .top .son h3{
+            line-height:20px;
+            font-weight:100;
+            font-size:0.75em;
+            color:#333333;
+        }
+        footer .top .son ._h3{
+            margin-top:20px;
+        }
+        footer .top .son ul li {
+            line-height:20px;
+            width:100%;
+        }
+        footer .top .son a{
+            font-size:12px;
+            color:#666;
+        }
+        footer .top .son a:hover{
+            text-decoration:underline;
+            color:#333;
+        }
+        footer .footer_section{
+            width:80%;
+            padding:20px 0 24px;
+            margin: 0 auto;
+            color:#666;
+        }
+        footer .footer_section .top1{
+            margin-bottom: 6px;
+            padding-bottom: 5px;
+            border-bottom:1px solid #aaa;
+        }
+        footer .footer_section .top1 a{
+            color: #60c1b6;
+            font-size:12px;
+        }
+        footer .footer_section .top1 a:hover{
+            color:#333;
+            text-decoration:underline;
+        }
+        footer .footer_section .top2{
+           line-height:20px;
+        }
+        footer .footer_section .top2 p{
+            float:left;
+        }
+        footer .footer_section .top2 .p1{
+            margin-right:20px;
+        }
+        footer .footer_section .top2 .p2 a{
+            border-right: 1px solid #d6d6d6;
+            margin-right: 10px;
+            padding-right: 12px;
+            white-space: nowrap;
+            color:#666;
+            font-size:12px;
+        }
+        footer .footer_section .top2 .p2 a:hover{
+            color:#333;
+            text-decoration:underline;
+        }
+        footer .footer_section .top3{
+            line-height:20px;
+            color:#666;
+            display:block;
+        }
+        footer .footer_section .top3 a{
+            color:#666;
+            font-size:12px;
+        }
+        footer .footer_section .top3 a:hover{
+            color:#333;
+            text-decoration:underline;
+        }
+        footer ._reset{
+            width:90%;
+            margin:0 auto;
+            background:#F2F2F2;
+            margin-top:20px;
+            color:#666;
+            font-size:12px;
+        }
+        footer ._reset div{
+            font-weight:100;
+            font-size:12px;
+            color:#333;
+            border-bottom:1px solid #dedede;
+            width:95%;
+            margin:0 auto;
+            box-sizing:border-box;
+            transition: all 0.3s linear 0s;
+        }
+        footer ._reset div ul{
+           display:none;
+            overflow: hidden;
+        }
+        footer ._reset div li{
+            line-height:30px;
+            text-indent: 40px;
+        }
+        footer ._reset div li a{
+            color:#666;
+        }
+        footer ._reset div li a:hover{
+            text-decoration:underline;
+            color:#333;
+        }
+        footer ._reset div h3{
+            line-height:39px;
+            font-weight:100;
+            font-size:12px;
+            width:100%;
+        }
+        footer ._reset div h3 span{
+            float:right;
+            cursor:pointer;
+            color:#666;
+        }
+        footer ._reset div a{
+            color:#666;
+            font-size:12px;
+            text-indent: 40px;
+            border:none;
+        }
+        /*第二步在最小临界到第二阶段的状态*/
+        @media screen and (min-width:750px){
+              footer .top{
+                  height:75%;
+                  width:80%;
+                  margin:0 auto;
+                  background:#F2F2F2;
+                  display:flex;
+                  flex-flow:row nowrap;
+                  justify-content:space-between;
+                  padding-top:35px;
+              }
+              footer{
+                  height:368px;
+                  background:#F2F2F2;
+              }
+              ._reset{
+                  display:none;
+              }
+              .nav1{
+                  visibility: visible;
+                  opacity:1;
+                  width:100%;
+              }
+              .nav2{
+                  height:44px;
+                  display:none;
+              }
+              .nav3{
+                  display:none;
+              }
+              nav{
+                  opacity:0.9;
+              }
+              section:nth-of-type(2){
+                  height:650px;
+              }
+              .banner .bannerPic:first-child{
+                  background:url("img/tim2.jpg") center no-repeat;
+              }
+              .banner .bannerPic:nth-child(2){
+                  background:url("img/phone2.jpg") center no-repeat;
+              }
+              .banner .bannerPic:nth-child(3){
+                  background:url("img/watch2.jpg") center no-repeat;
+              }
+              .banner .bannerPic:nth-child(4){
+                  background:url("img/tv2.jpg") center no-repeat;
+              }
+              section:nth-of-type(3) .son{
+                  float:left;
+                  width:49.5%;
+              }
+              section:nth-of-type(3) .son:first-child{
+                  background:url(img/hp2.jpg) center no-repeat;
+              }
+              section:nth-of-type(3) .son:nth-child(2){
+                  background:url(img/ipad2.jpg) center no-repeat;
+              }
+              section:nth-of-type(3) .son:nth-child(3){
+                  background:url(img/6s2.jpg) center no-repeat;
+              }
+              section:nth-of-type(3) .son:nth-child(4){
+                  background:url(img/watch2.jpg) center no-repeat;
+              }
+          }
+        @media screen and (min-width:1000px){
+            .nav1{
+                width:1000px;
+                opacity:1;
+            }
+            section:nth-of-type(3) .son{
+                float:left;
+                width:24.5%;
+            }
+            section:nth-of-type(3) .son:first-child{
+                background:url(img/hp1.jpg) center no-repeat;
+            }
+            section:nth-of-type(3) .son:nth-child(2){
+                background:url(img/ipad1.jpg) center no-repeat;
+            }
+            section:nth-of-type(3) .son:nth-child(3){
+                background:url(img/6s1.jpg) center no-repeat;
+            }
+            section:nth-of-type(3) .son:nth-child(4){
+                background:url(img/watch1.jpg) center no-repeat;
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <nav>
+          <ul class="nav1">
+                <li><a href="#" class="iconfont icon-apple"></a></li>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">ipad</a></li>
+                <li><a href="#">iphone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">j技术支持</a></li>
+                <li><a href="#" class="iconfont icon-sousuo"></a></li>
+                <li><a href="#" class="iconfont icon-gouwudai"></a></li>
+            </ul>
+          <ul class="nav2">
+                <li><a href="#" class="iconfont icon-dengyu"></a></li>
+                <li><a href="#" class="iconfont icon-apple"></a></li>
+                <li><a href="#" class="iconfont icon-gouwudai"></a></li>
+          </ul>
+    </nav>
+    <ul class="nav3">
+        <li><a href="###">Mac</a></li>
+        <li><a href="###">ipad</a></li>
+        <li><a href="###">iphone</a></li>
+        <li><a href="###">Watch</a></li>
+        <li><a href="###">Music</a></li>
+        <li><a href="###">技术支持</a></li>
+        <li><a href="###" class="iconfont icon-sousuo">搜素apple.com</a></li>
+    </ul>
+</section>
+<section>
+        <div class="banner">
+            <div class="bannerPic"></div>
+            <div class="bannerPic"></div>
+            <div class="bannerPic"></div>
+            <div class="bannerPic"></div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="btn">
+            <span><b></b></span>
+            <span><b></b></span>
+            <span><b></b></span>
+            <span><b></b></span>
+        </div>
+</section>
+    <section>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+</section>
+<footer>
+    <div class="top">
+        <div class="son">
+            <h3>选购及了解</h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">watch</a></li>
+                <li><a href="">Music</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+            </ul>
+        </div>
+        <div class="son">
+            <h3>apple stroe商店</h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">watch</a></li>
+                <li><a href="">Music</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+            </ul>
+        </div>
+        <div class="son">
+            <h3>教育应用</h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <h3 class="_h3">商务应用</h3>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+        <div class="son">
+            <h3>账户</h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+                <h3 class="_h3">apple价值观</h3>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+        <div class="son">
+            <h3>关于apple</h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="_reset">
+        <div>
+            <h3>选购及了解 <span class="jia">+</span></h3>
+        <ul>
+            <li><a href="">Mac</a></li>
+            <li><a href="">ipad</a></li>
+            <li><a href="">iPhone</a></li>
+            <li><a href="">watch</a></li>
+            <li><a href="">Music</a></li>
+            <li><a href="">iPhone</a></li>
+            <li><a href="">iPhone</a></li>
+            <li><a href="">iPhone</a></li>
+            <li><a href="">iPhone</a></li>
+        </ul>
+        </div>
+        <div>
+            <h3>apple stroe商店<span class="jia">+</span></h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">watch</a></li>
+                <li><a href="">Music</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+                <li><a href="">iPhone</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>教育应用<span class="jia">+</span></h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>账户<span class="jia">+</span></h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="_h3">apple价值观<span class="jia">+</span></h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>关于apple<span class="jia">+</span></h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="_h3">商务应用<span class="jia">+</span></h3>
+            <ul>
+                <li><a href="">Mac</a></li>
+                <li><a href="">ipad</a></li>
+            </ul>
+        </div>
+    </div>
+    <section class="footer_section">
+        <div class="top1">
+            更多选购方式：前往<a href="###">Apple Store 零售店</a>，致电 400-666-8800 或查找在你附近的
+        </div>
+        <div class="top2">
+            <p class="p1">
+                Copyright @ 2016 Apple Inc. 保留所有权利。
+            </p>
+            <p class="p2">
+                <a href="">隐私政策</a>
+                <a href="">使用条款</a>
+                <a href="">销售政策</a>
+                <a href="">法律信息</a>
+                <a href="">网站地图</a>
+            </p>
+        </div>
+        <div class="top3">
+            京公安网安备 11010502008968<a href="###">京ICP备10214630</a>
+        </div>
+    </section>
+</footer>
+</body>
+</html>

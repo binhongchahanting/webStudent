@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>电子书</title>
+    <script src="jquery-1.11.2.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script>
+        $(document).ready(function(){
+            var fontSize;
+            var fontColor;
+            fontSize=localStorage.fs==null?16:parseInt(localStorage.fs);
+            fontColor=localStorage.fc==null?"#333":localStorage.fc;
+            $("p").css({
+                "fontSize":fontSize,
+                "color":fontColor
+            });
+            $("input").eq(0).click(function(){
+                  fontSize++;
+                $("p").css("font-size",fontSize);
+                localStorage.fs=fontSize;
+            });
+            $("input").eq(1).click(function(){
+                fontSize--;
+                if(fontSize<=12){
+                    fontSize=12;
+                }
+                $("p").css("font-size",fontSize);
+                localStorage.fs=fontSize;
+            });
+            $("input").eq(2).change(function(){
+                localStorage.fc=$(this).val();
+            });
+            $('p').mousewheel(function(event, delta, deltaX, deltaY) {
+                if(deltaY<0){
+                    fontSize--;
+                    if(fontSize<=12){
+                        fontSize=12;
+                    }
+                    $("p").css("font-size",fontSize);
+                    localStorage.fs=fontSize;
+                }else{
+                    fontSize++;
+                    $("p").css("font-size",fontSize);
+                    localStorage.fs=fontSize;
+                }
+                console.log(delta, deltaX, deltaY);//delta为1向上滚 deltaY=1 else
+            });
+        });
+
+    </script>
+    <style>
+        h3{
+            border:2px solid #72ffad;
+            padding:10px;
+            text-align:center;
+        }
+        p{
+            padding:10px;
+            border:2px solid #AAECBF;
+            line-height:1.5em;
+            text-indent:2em;
+        }
+    footer{
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content:space-around;
+    }
+    </style>
+</head>
+<body>
+<h3>book</h3>
+<p>
+    超媒体是超文本（hypertext）和多媒体在信息浏览环境下的结合。它是超级媒体的简称。用户不仅能从一个文本跳到另一个文本，而且可以激活一段声音，显示一个图形，甚至可以播放一段动画。
+    Internet采用超文本和超媒体的信息组织方式，将信息的链接扩展到整个Internet上。Web就是一种超文本信息系统，Web的一个主要的概念就是超文本链接。它使得文本不再像一本书一样是固定的线性的，而是可以从一个位置跳到另外的位置并从中获取更多的信息，还可以转到别的主题上。想要了解某一个主题的内容只要在这个主题上点一下，就可以跳转到包含这一主题的文档上。正是这种多连接性把它称为Web。
+    三、超文本传输协议（HTTP）HyperText Transfer Protocol超文本在互联网上的传输协议。
+</p>
+<footer>
+    <input type="button" value="A+"/>
+    <input type="button" value="A-"/>
+    <input type="color"/>
+</footer>
+</body>
+</html>

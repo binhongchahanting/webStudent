@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标随动</title>
+    <script src="jquery-1.11.2.js"></script>
+    <style>
+        body{
+            height: 100vh;
+            background:radial-gradient(#1fa6c1,#ff5566);
+        }
+        @keyframes xunl {
+            100%{
+                transform:rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .stage{
+            height:300px;
+            width:300px;
+            border:1px solid #ff8850;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin-left:-150px;
+            margin-top: -150px;
+            transform: rotateX(0deg) rotateY(0deg);
+            transform-style:preserve-3d;
+            perspective: 5000px;
+            transform-origin:50% 50% -150px;
+          /*  animation:xunl 3s linear 0s infinite;*/
+        }
+        .stage div{
+            height:300px;
+            width:300px;
+            box-shadow:0 0 5px #333;
+            position:absolute;
+            text-align: center;
+            line-height: 300px;
+            color:#fff;
+            font-size:40px;
+            background:url(img/xunlong2.jpg) center repeat;
+        }
+        .stage div:nth-child(2){
+            transform:rotateY(180deg) translateZ(300px);
+        }
+        .stage div:nth-child(3){
+            transform:rotateY(-90deg) translateZ(150px) translateX(-150px);
+        }
+        .stage div:nth-child(4){
+            transform:rotateY(90deg) translateZ(150px) translateX(150px);
+        }
+        .stage div:nth-child(5){
+            transform:rotateX(90deg) translateZ(150px) translateY(-150px);
+        }
+        .stage div:nth-child(6){
+            transform:rotateX(-90deg) translateZ(150px) translateY(150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div>正面</div>
+        <div>后面</div>
+        <div>左面</div>
+        <div>右面</div>
+        <div>上面</div>
+        <div>下面</div>
+    </div>
+</body>
+<script>
+
+    //鼠标在window里面的滑动 导致正方体转动
+    $(".stage").mousemove(function(e){
+        var e=e||event;
+        var w= $(".stage")[0].offsetLeft+$(this)[0].offsetWidth/2;//旋转中心到浏览器左边的距离
+        var h= $(".stage")[0].offsetTop+$(this)[0].offsetHeight/2;//旋转中心到浏览器上边的距离
+        var x= e.pageX-w;//鼠标到旋转中心的距离x
+        var y= e.pageY-h;
+        var c=Math.sqrt(x*x+y*y);
+        var j1=x/c;
+        var j2=y/c;
+        $(".stage").css({
+            transform:"rotateX("+(j1)*1/(2*Math.PI)*360+"deg)"+" rotateY("+(j2)*1/(2*Math.PI)*360+"deg)"
+        });
+    });
+</script>
+</html>

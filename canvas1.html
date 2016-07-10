@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas1</title>
+    <style>
+       #mycanvas{
+           border:1px solid #ff8850;
+           display:block;
+           margin:20px auto;
+       }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+<script>
+   var box= document.getElementById("mycanvas");
+    var ctx=box.getContext("2d");
+   ctx.fillStyle="#f56";
+    ctx.fillRect(0,0,400,400);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle="green";
+    ctx.arc(50,350,50,0,Math.PI*2);
+    ctx.fill();
+    ctx.beginPath();
+   var step=50;
+    setInterval(function(){
+        ctx.beginPath();
+        ctx.clearRect(0,0,400,400);
+        step+=2;
+        ctx.arc(step,350,50,0,Math.PI*2);
+        ctx.fill();
+        ctx.closePath();
+    },30);
+</script>
+</html>

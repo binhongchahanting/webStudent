@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>house</title>
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var str="@keyframes house{";
+            var x=1/8;
+            var X=0;
+            var Y=156;
+
+            for(var i=0;i<8;i++){
+                if(i%4==0){
+                    X=0;
+                    Y-=156;
+                }else{
+                    X-=179;
+                }
+                str+=i*x*100+"%{"+"background-position:"+X+"px "+Y+"px}";
+            }
+            str+="}";
+           alert(str);
+            $("<style></style>").html(str).appendTo("head");
+        });
+    </script>
+    <style>
+        .house{
+            height:156px;
+            width:179px;
+            margin:20% auto;
+            background:url(img/house1.jpg) no-repeat;
+            animation:house 1s step-end infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="house">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas画表</title>
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        $(document).ready(function(){
+            var _context=$("#_canvas")[0].getContext("2d");
+            _context.beginPath();
+            _context.strokeStyle="green";
+            _context.arc(200,200,200,0,Math.PI*2);
+            _context.stroke();
+            _context.closePath();
+            _context.save();
+            _context.strokeStyle="#333";
+            _context.translate(200,200);
+            for(var i=0;i<60;i++){
+                _context.rotate(Math.PI/30);
+               _context.moveTo(0,200);
+               _context.lineTo(0,180)
+            }
+            _context.stroke();
+            _context.closePath();
+            _context.restore();
+            _context.beginPath();
+            _context.translate(200,200);
+            setInterval(function(){
+                var date=new Date();
+                var sec=date.getSeconds();
+                _context.rotate(sec*Math.PI/30);
+                _context.strokeStyle="red";
+                _context.moveTo(0,0);
+                _context.lineTo(0,170);
+                _context.stroke();
+            },1000);
+            _context.closePath();
+            _context.stroke();
+
+
+        });
+    </script>
+    <style>
+        canvas{
+            border:1px solid #9f6ec1;
+            margin: 40px auto;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="_canvas" height="500" width="400"></canvas>
+</body>
+</html>

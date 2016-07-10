@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>touch 事件</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <style>
+        .demo{
+            height:10vw;
+            width:10vw;
+            border-radius:50%;
+            background:#72ffad;
+            display:none;
+        }
+        body{
+            margin:0;padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+
+    </div>
+</body>
+<script src="../jquery-1.11.2.js"></script>
+<script>
+
+    $(document)[0].addEventListener("touchstart",function(e){
+        var _width=$(".demo").width()/2;
+        var e=e||event;
+        var x= e.touches[0].clientX-_width;
+        var y= e.touches[0].clientY-_width;
+        $(".demo").css({
+            display:"block",
+            "transform":"translate("+x+"px,"+y+"px)"
+        });
+        console.log(e.touches);
+    });
+    $(document)[0].addEventListener("touchmove",function(e){
+        var _width=$(".demo").width()/2;
+        var e=e||event;
+        var x= Number(e.touches[0].clientX)-_width;
+        var y= Number(e.touches[0].clientY)-_width;
+        $(".demo").css({
+            display:"block",
+            "transform":"translate("+x+"px,"+y+"px)"
+        });
+    });
+    $(document)[0].addEventListener("touchend",function(e){
+        $(".demo").css({
+            display:"none",
+        });
+    });
+
+</script>
+</html>

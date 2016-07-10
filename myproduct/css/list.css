@@ -1,0 +1,58 @@
+.scrollline{
+    left:20%;
+}
+.main{
+    width:100%;
+    background: #fefcfd;
+}
+.main ._p{
+    height:50px;
+    text-indent:2em;
+    line-height:50px;
+    border-bottom:1px solid #cbcbcb;
+    font-weight:600;
+    font-size:1.5rem;
+}
+.main ._all{
+    width:100%;
+}
+.main ._all div{
+    border-bottom:1px solid #cbcbcb;
+}
+.main ._all p {
+    overflow: hidden;
+}
+.main ._all p a{
+    display:block;
+    text-indent:3em;
+    line-height:50px;
+    float:left;
+    text-decoration: none;
+    color:#333;
+    font-weight:600;
+}
+.main ._all div p span{
+    float:right;
+    font-size:20px;
+    margin-top:3px;
+    margin-right:20px;
+    color:#aaaaaa;
+    cursor: pointer;
+}
+.main ._all div ul{
+    width:100%;
+    display:none;
+}
+.main ._all div ul li{
+    height:50px;
+    border-bottom:1px solid #cbcbcb;
+    text-indent: 40px;
+    line-height: 50px;
+}
+.main ._all div ul li a{
+    display:block;
+    line-height:50px;
+    text-indent: 70px;
+    color:#555;
+    font-weight: 800;
+}

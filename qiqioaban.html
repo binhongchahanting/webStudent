@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>七巧板</title>
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            var _context=$("#_canvas")[0].getContext("2d");//canvas是原生js的方法
+            var line=[
+                {"p":[[0,0],[200,200],[0,400]],"color":"CCFE67"},
+                {"p":[[0,0],[200,200],[400,0],[0,0]],"color":"67BECF"},
+                {"p":[[400,0],[300,100],[300,300],[400,200],[400,0]],"color":"EF3D61"},
+                {"p":[[300,100],[200,200],[300,300],[300,100]],"color":"F7F01E"},
+                {"p":[[200,200],[100,300],[200,400],[300,300],[200,200]],"color":"A54C08"},
+                {"p":[[100,300],[0,400],[200,400],[100,300]],"color":"FA8BCD"},
+                {"p":[[200,400],[400,400],[400,200],[200,400]],"color":"F6CA29"}
+            ];
+            _context.save();
+            for(var i=0;i<line.length;i++){
+                createLine(line[i]);
+            }
+            _context.restore();
+            function createLine(obj){
+                _context.beginPath();
+                _context.fillStyle="#"+obj.color;
+                _context.moveTo(obj["p"][0][0],obj["p"][0][1]);
+                for(var i=1;i<obj["p"].length;i++){
+                    _context.lineTo(obj["p"][i][0],obj["p"][i][1]);
+                }
+                _context.fill();
+                _context.stroke();
+                _context.closePath();
+            }
+        });
+    </script>
+    <style>
+        canvas{
+            border:1px solid #9f6ec1;
+            margin:40px auto;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="_canvas" height="400" width="400"></canvas>
+</body>
+</html>

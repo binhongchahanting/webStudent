@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>转圈效果</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .circle{
+            border:5px solid #08daff;
+            height:100%;
+            width:100%;
+            border-radius:50%;
+        }
+        .father{
+            width:200px;
+            height:200px;
+            margin:200px auto;position:relative;
+        }
+        .top{
+            height:200px;
+            width:200px;
+            position:absolute;
+            background:#fff;
+            left:-100px;top:-200px;
+            transition: all 0.5s ease 0s;
+        }
+        .bottom{
+            height:200px;
+            width:200px;
+            position:absolute;
+            background:#fff;
+            left:100px;
+            top:200px;
+            transition: all 0.5s ease 0s;
+        }
+        .father:hover{
+            background:#fff;
+        }
+        .father:hover .top{
+            transform: translate(0px,200px);
+        }
+        .father:hover .bottom{
+            transform: translate(0px,-200px);
+        }
+        .father:hover .mid{
+            background-position:-337px -291px ;
+        }
+        .mid{
+            display: block;
+            position:absolute;
+            margin: 0 auto;
+            margin-top: -35px;
+            height: 70px;
+            width: 64px;
+            top:50%;
+            left:50%;
+            margin-left:-32px;
+            background:url(words.png) no-repeat -416px -291px;
+            z-index: 1000;
+            transition: all 0.3s ease 0.5s;
+        }
+        .text{
+            color:#333;
+            position:absolute;
+            z-index:500;
+            top:250px;
+            left:60px;
+            font-size:14px;
+            font-weight:700;
+            transition: all 0.3s ease 0.5s;
+        }
+        .bigmenu{
+            position:absolute;
+            left:-20px;
+            top:400px;
+            background: #ff984f;
+            height:0px;
+            width:240px;
+            color:#fff;
+            transition: all 0.3s ease 0.5s;
+            z-index:300;
+        }
+        .father:hover .bigmenu{
+            height:400px;
+            transform: translate(0px,-420px);
+        }
+        .father:hover .text{
+           color:#fff;
+        }
+        .bigmenu p:first-child{
+            margin-top:300px;
+            text-align: center;
+            line-height:20px;
+        }
+        .bigmenu p:nth-child(2){
+            text-align: center;
+            line-height:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="circle">
+            <span class="mid"></span>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="bigmenu">
+                <p>定制网站高端定制网站</p>
+                <p>彰显品牌形象</p>
+            </div>
+            <span class="text">高端定制网站</span>
+        </div>
+    </div>
+</body>
+</html>

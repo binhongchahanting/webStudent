@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        canvas{
+            display:block;
+            margin:0 auto;
+            border:1px solid #ff8850;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+<script>
+    document.getElementsByTagName("canvas")[0].width=400;
+    document.getElementsByTagName("canvas")[0].height=400;
+    var _canvas=document.getElementsByTagName("canvas")[0].getContext("2d");
+    _canvas.rect(0,0,400,400);
+    _canvas.strokeStyle="#000";
+    _canvas.fillStyle="#f56";
+    _canvas.fill();
+    _canvas.stroke();
+    _canvas.beginPath();
+    _canvas.moveTo(200,200);
+    _canvas.arc(200,200,100,Math.PI*7/4,Math.PI/4);
+    _canvas.fillStyle="orange";
+    _canvas.fill();
+    _canvas.beginPath();
+    _canvas.moveTo(200,200);
+    _canvas.arc(200,200,100,Math.PI/4,Math.PI*3/4);
+    _canvas.fillStyle="green";
+    _canvas.fill();
+    _canvas.beginPath();
+    _canvas.moveTo(200,200);
+    _canvas.arc(200,200,100,Math.PI*3/4,Math.PI*5/4);
+    _canvas.fillStyle="yellow";
+    _canvas.fill();
+    _canvas.beginPath();
+    _canvas.moveTo(200,200);
+    _canvas.arc(200,200,100,Math.PI*5/4,Math.PI*7/4);
+    _canvas.fillStyle="blue";
+    _canvas.fill();
+    _canvas.beginPath();
+    _canvas.moveTo(200,200);
+    _canvas.lineTo(300,100);
+    _canvas.lineTo(300,300);
+    _canvas.lineTo(200,200);
+    _canvas.stroke();
+</script>
+</html>

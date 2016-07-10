@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3d导航</title>
+    <script src="../jquery-1.11.2.js"></script>
+    <style>
+        .stage{
+            transform-style: preserve-3d;
+            height:50px;
+            width:100px;
+           /* border:1px solid #ff984f;*/
+            position:relative;
+            transform: rotateX(0deg) rotateY(5deg);
+            transition:all 0.3s ease 0s;
+            transform-origin: 0px 25px;
+            float:left;
+            perspective:4200px;
+        }
+        .son{
+            position:absolute;
+            height:100%;
+            width:100%;
+            background: rgba(57, 140, 134, 0.8);
+            text-align:center;
+            line-height:50px;
+            color: #fff;
+            font-size:20px;
+            font-weight:900;
+            background-color: #51938f;
+            background-size: 5px 5px;
+            background-position: 0 0, 30px 30px;
+            background-image: linear-gradient(45deg, #478480 25%, transparent 25%, transparent 75%, #478480 75%, #478480), linear-gradient(45deg, #478480 25%, transparent 25%, transparent 75%, #478480 75%, #478480);
+
+        }
+        .stage .son:nth-child(1){
+            transform:translateZ(25px);
+        }
+        .stage .son:nth-child(2){
+            transform:rotateX(-90deg) translateZ(25px);
+        }
+        ._all{
+            height:50px;
+            width:400px;
+            margin:100px auto;
+        }
+         .one{
+            display:block;
+            height:50px;
+            width:100px;
+            border-right:1px solid #dddddd;
+            float: left;
+
+        }
+    </style>
+</head>
+<body>
+<div class="_all">
+    <div class="one">
+        <div class="stage">
+            <div class="son">天气</div>
+            <div class="son">不错</div>
+        </div>
+    </div>
+    <div class="one">
+        <div class="stage">
+            <div class="son">天气</div>
+            <div class="son">不错</div>
+        </div>
+    </div>
+    <div class="one">
+        <div class="stage">
+            <div class="son">天气</div>
+            <div class="son">不错</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script>
+    $(".stage").hover(function(){
+        $(this).css({
+            transform:"rotateX(90deg)"
+        })
+    },function(){
+        $(this).css({
+            transform:"rotateX(0deg)"
+        })
+    })
+</script>
+</html>

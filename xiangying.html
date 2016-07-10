@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>响应式</title>
+    <meta name="viewport" content="width=devic-width,initial-scale=1.0">
+    <style>
+        .clear:after{
+            content:"";
+            clear:both;
+            display:block;
+        }
+        .stage{
+            width:100%;
+        }
+        .box{
+            background:url(img/xunlong2.jpg) center repeat;
+            float:left;
+            width:100%;
+            box-sizing: border-box;
+            border:5px solid #1fa6c1;
+            height:500px;
+        }
+        @media screen and (min-width:640px) {
+            .box{
+                float:left;
+                width:50%;
+                height:300px;
+            }
+        }
+        @media screen and (min-width:1240px) {
+            .box{
+                float:left;
+                width:25%;
+                height:200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="stage clear">
+    <div class="box clear"></div>
+    <div class="box clear"></div>
+    <div class="box clear"></div>
+    <div class="box clear"></div>
+</div>
+</body>
+</html>

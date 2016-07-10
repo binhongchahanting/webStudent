@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css3跑车</title>
+    <style>
+        body,ul,li,p,h2{
+            margin:0;padding:0;
+        }
+        .demo{
+            width:33%;
+            height:350px;
+            overflow:hidden;
+            float:left;
+            color:#fff;
+            position:relative;
+        }
+        .demo:hover .img1{
+            transform: translate(-20px,0);
+            opacity:0.7;
+        }
+        .demo .img1{
+            transition:transform 0.5s ease;
+        }
+        .demo .h2_1{
+            position:absolute;
+            left:30px;
+            top:200px;
+            transition:transform 0.5s ease;
+        }
+        .demo:hover .h2_1{
+            transform:translate(0,-20px)
+        }
+        .demo .p_1{
+            transition:transform 0.5s ease;
+            position:absolute;
+            left:30px;
+            bottom:-50px;
+        }
+        .demo:hover .p_1{
+            transform:translate(0,-140px)
+        }
+        .demo .h2_2{
+            position:absolute;
+            left:30px;
+            top:80px;
+        }
+        .demo .p1{
+            position: absolute;
+            left:-100px;
+            top:120px;
+            transition:transform 0.5s ease;
+        }
+        .demo:hover .p1{
+            transform:translate(150px,0)
+        }
+        .demo .p2{
+            position: absolute;
+            left:-100px;
+            top:150px;
+            transition:transform 0.5s ease 0.1s;
+        }
+        .demo:hover .p2{
+            transform:translate(150px,0)
+        }
+        .demo .p3{
+            position: absolute;
+            left:-100px;
+            top:180px;
+            transition:transform 0.5s ease 0.2s;
+        }
+        .demo:hover .p3{
+            transform:translate(150px,0)
+        }
+        .demo .p_3{
+
+            position:absolute;
+            top:320px;
+            left:0;
+            width:100%;
+            height:90px;
+            background:rgba(15,24,9,0.7);
+            line-height:30px;
+            font-size:16px;
+            transition:transform 0.5s ease;
+        }
+        .demo:hover .p_3{
+            transform:translate(0,-60px)
+        }
+        .box{
+            height:300px;
+            width:500px;
+            background:#FFF;
+            transition: transform 0.5s ease;
+            position: absolute;
+            left:0;
+            top:350px;
+            transform-origin:left top;
+        }
+        .demo:hover .box{
+            transform: rotate(-15deg);
+
+        }
+    .triangle span:nth-of-type(1){
+        position: absolute;
+        right:30%;
+        top:115%;
+        color:#333;
+        transition: all 0.5s ease;
+    }
+    .triangle:hover span:nth-of-type(1){
+            right:30%;
+            top:90%;
+    }
+    .triangle span:nth-of-type(2){
+            position: absolute;
+            right:15%;
+            top:115%;
+            color:#333;
+        transition: all 0.5s ease 0.1s;
+    }
+    .triangle:hover span:nth-of-type(2){
+            right:15%;
+            top:90%;
+    }
+    .fly p:nth-of-type(1){
+        position:absolute;
+        left:15%;
+        top:25%;
+        font-size:24px;
+        font-weight:800;
+        transition: transform 0.5s ease;
+    }
+    .fly p:nth-of-type(2){
+            position:absolute;
+            left:35%;
+            top:47%;
+        transition: transform 0.5s ease;
+    }
+    .fly:hover p:nth-of-type(1){
+        transform: translate(40px,0);
+    }
+    .fly:hover p:nth-of-type(2){
+
+        transform: translate(0,-20px);
+    }
+    .fly div{
+        height:250px;
+        width:250px;
+        border:3px solid #ff8850;
+        position:absolute;
+        top:-300px;
+        left:20%;
+        transform-origin: center ;
+        transition: all 1s ease;
+    }
+    .fly:hover div{
+        transform: rotate(720deg);
+        top:20%;
+    }
+    .niuqu h2{
+        position:absolute;
+        left:40px;
+        top:25%;
+        transition:transform .5s ease;
+        transform:skew(90deg);
+    }
+        .niuqu:hover h2{
+            transform:skew(0deg);
+        }
+        .niuqu:hover p{
+            transform: skew(0deg);
+        }
+    .niuqu p{
+        position:absolute;
+        left:40px;
+        top:40%;
+        transition:transform .5s ease;
+        transform:skew(90deg);
+    }
+        ._scall p{
+            position:absolute;
+            left:10%;
+            top:10%;
+            width:80%;
+            height:80%;
+            border:3px solid #ddd;
+            transition:transform 0.5s ease;
+        }
+        ._scall h2{
+            position:absolute;
+            left:25%;
+            top:25%;
+            transition:all 0.5s ease;
+        }
+        ._scall span{
+            position:absolute;
+            left:25%;
+            top:45%;
+            transition:all 0.5s ease;
+        }
+        ._scall img{
+            transition:transform 0.5s ease;
+            transform-origin: left top;
+        }
+        ._scall:hover img{
+            transform:scale(0.9);
+            opacity:0.8;
+        }
+        ._scall:hover p{
+            transform:scale(0.8);
+        }
+        ._scall:hover h2{
+            font-size:20px;
+        }
+        ._scall:hover span{
+            font-size:14px;
+        }
+        .last p:nth-of-type(1){
+            height:70%;
+            width:0%;
+            border-top:1px solid #fff;
+            border-bottom:1px solid #fff;
+            position:absolute;
+            left:50%;
+            top:20%;
+            transition: all 0.3s ease;
+        }
+        .last p:nth-of-type(2){
+            height:0%;
+            width:70%;
+            border-left:1px solid #fff;
+            border-right:1px solid #fff;
+            position:absolute;
+            left:15%;
+            top:50%;
+            transition: all 0.3s ease;
+        }
+        .last:hover p:nth-of-type(1){
+            width:80%;
+            left:10%;
+        }
+        .last:hover p:nth-of-type(2){
+            height:80%;
+            top:15%;
+        }
+        .last h2{
+            position:absolute;
+            left:20%;
+            top:22%;
+            transition: all 0.3s ease;
+        }
+        .last:hover h2{
+            left:30%;
+        }
+        .last:hover span{
+            top:35%;
+            opacity:1;
+        }
+        .last span{
+            position:absolute;
+            left:20%;
+            top:45%;
+            opacity:0;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="demo">
+    <img class="img1" src="img/pic1.jpg" alt=""/>
+    <h2 class="h2_1">简单平移</h2>
+    <p class="p_1">这是一个简单地平移</p>
+</div>
+<div class="demo">
+    <img class="img1" src="img/pic2.jpg" alt=""/>
+    <h2 class="h2_2">这是一段优雅的代码</h2>
+    <p class="p1">优雅的代码1</p>
+    <p class="p2">优雅的代码2</p>
+    <p class="p3">优雅的代码3</p>
+</div>
+<div class="demo">
+    <img class="img1" src="img/pic3.jpg" alt=""/>
+    <p class="p_3">
+        奔跑吧 青春 奔跑吧 青春 奔跑吧 青春 奔跑吧 青春 奔跑吧 青春
+        奔跑吧 青春 奔跑吧 青春 奔跑吧 青春 奔跑吧 青春 奔跑吧 青春
+        奔跑吧 青春
+    </p>
+</div>
+<div class="demo triangle">
+    <img class="img1" src="img/pic4.jpg" alt=""/>
+    <div class="box">
+    </div>
+    <span>info1</span>
+    <span>info2</span>
+</div>
+<div class="demo fly">
+    <img src="img/pic5.jpg" alt="" class="img1"/>
+    <p>旋转飞人</p>
+    <p>通过旋转和位移</p>
+    <div></div>
+</div>
+<div class="demo niuqu">
+    <img src="img/pic6.jpg" alt="" class="img1"/>
+    <h2 class="h2_3">
+        扭曲飞入的优雅代码
+    </h2>
+    <p>
+        北京欢迎你北京欢迎你北京欢迎你北京欢迎你北京欢迎你北京欢迎你北京欢迎你
+    </p>
+</div>
+<div class="demo _scall">
+    <img src="img/pic7.jpg" alt="" class="img2"/>
+    <p></p>
+    <h2>缩放</h2>
+    <span>缩放缩放缩放缩放缩放</span>
+</div>
+<div class="demo last">
+    <img src="img/pic8.jpg" alt="" class="img1"/>
+    <p></p>
+    <p></p>
+    <h2>绘制效果线</h2>
+    <span>哈哈哈哈哈哈哈哈哈哈哈哈</span>
+</div>
+</body>
+</html>

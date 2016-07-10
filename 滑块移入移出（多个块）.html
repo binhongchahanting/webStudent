@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>滑块移入移出</title>
+<style type="text/css">
+*{margin:0; padding:0; list-style:none; }
+ul.block{width:500px; height:500px; margin:0 auto;  margin-top:100px; background:#000;}
+li{width:100px; height:100px; line-height:100px; text-align:center; font-size:20px; font-weight:bold;  background:#ccc;float:left; margin:12px;position:relative;overflow:hidden;}
+.box{width:100px; height:100px; background:#000; opacity:0.6; position:absolute; right:-100px; top:0;}
+</style>
+
+<script src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+/*
+判断鼠标和li的每一条边的距离，那边最近就从哪边进入
+*/
+
+$(window).load(function(){
+	var $li = $('li');
+	var $ul = $('ul');
+	
+	$li.mouseenter(function(e){
+		var e = e||window.event;
+		var oTop = e.clientY-this.offsetTop;
+		var oLeft = e.clientX-this.offsetLeft;
+		var oRight = this.offsetLeft+this.offsetWidth-e.clientX;
+		var oBot = this.offsetTop+this.offsetHeight-e.clientY;
+		var index = $(this).index();
+		var $box = $('.box').eq(index);
+		
+		if(oTop<oLeft&&oTop<oRight&&oTop<oBot){
+			$box.css({'right':'0px','top':'-100px'}).stop().animate({'right':0,'top':0},500);
+			}
+		else if(oLeft<oTop&&oLeft<oRight&&oLeft<oBot){
+			$box.css({'right':'100px','top':'0px'}).stop().animate({'right':0,'top':0},500);
+			}
+		else if(oRight<oTop&&oRight<oLeft&&oRight<oBot){
+			$box.css({'right':'-100px','top':'0px'}).stop().animate({'right':0,'top':0},500);
+			}
+		else{
+			$box.css({'right':'0px','top':'100px'}).stop().animate({'right':0,'top':0},500);
+			}
+		})
+	$li.mouseleave(function(e){
+		var e = e||window.event;
+		var oTop = e.clientY-this.offsetTop;
+		var oLeft = e.clientX-this.offsetLeft;
+		var oRight = this.offsetLeft+this.offsetWidth-e.clientX;
+		var oBot = this.offsetTop+this.offsetHeight-e.clientY;
+		var index = $(this).index();
+		var $box = $('.box').eq(index);
+		
+		if(oTop<oLeft&&oTop<oRight&&oTop<oBot){
+			$box.stop().animate({'right':'0','top':'-100px'},500);
+			}
+		else if(oLeft<oTop&&oLeft<oRight&&oLeft<oBot){
+			$box.stop().animate({'right':'100px','top':'0'},500);
+			}
+		else if(oRight<oTop&&oRight<oLeft&&oRight<oBot){
+			$box.stop().animate({'right':'-100px','top':'0'},500);
+			}
+		else{
+			$box.stop().animate({'right':'0','top':'100px'},500);
+			}
+		})
+	})
+	
+	
+</script>
+
+</head>
+<body>
+<ul class="block">
+    <li>1<div class="box"></div></li>
+    <li>2<div class="box"></div></li>
+    <li>3<div class="box"></div></li>
+    <li>4<div class="box"></div></li>
+    <li>5<div class="box"></div></li>
+    <li>6<div class="box"></div></li>
+    <li>7<div class="box"></div></li>
+    <li>8<div class="box"></div></li>
+    <li>9<div class="box"></div></li>
+    <li>10<div class="box"></div></li>
+    <li>11<div class="box"></div></li>
+    <li>12<div class="box"></div></li>
+    <li>13<div class="box"></div></li>
+    <li>14<div class="box"></div></li>
+    <li>15<div class="box"></div></li>
+    <li>16<div class="box"></div></li>
+    
+</ul>
+
+</body>
+</html>

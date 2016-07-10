@@ -1,0 +1,50 @@
+nav{
+    position:relative;
+}
+._login{
+    position:absolute;
+    top:10px;
+    display:block;
+    height:30px;
+    width:60px;
+    line-height:30px;
+    text-align: center;
+    color:#fae4e7;
+    font-size:4.5vw;
+    background:#f55a84;
+    box-shadow:0 0 5px #fe8e94;
+    font-weight:900;
+    border-radius:10px;
+    right:20px;
+}
+.mid{
+    width:80%;
+    margin:0 auto;
+    margin-top:10vw;
+}
+.mid ._name{
+    width:100%;
+    border:1px solid #dadada;
+    border-radius:10px;
+    margin-bottom:8vw;
+    height:10vw;
+    box-shadow:0 0 5px #333;
+    outline: none;
+    text-indent:2rem;
+    font-size:2rem;
+}
+.mid #target{
+    height:50px;
+    width:100%;
+    margin:0 auto;
+    border-radius:10px;
+    background:#eb4172;
+    color:#fff;
+    display:block;
+    margin-top:20px;
+    font-size:2rem;
+    outline:none;
+}
+.scrollline{
+    left:60%;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .box{
+        width: 134px;
+        height: 149px;
+        margin: 10% auto;
+        box-shadow: 0 0 10px #ff8850;
+        background: url("1.jpg") 0 0 no-repeat;
+        animation: fire 3s step-end 0s infinite alternate;
+    }
+    /*@keyframes fire {*/
+        /*0%{*/
+            /*background-position: 0 0;*/
+        /*}*/
+        /*6.7%{*/
+            /*background-position: -134px 0;*/
+        /*}*/
+        /*13.3%{*/
+            /*background-position: -268px 0;*/
+        /*}*/
+        /*20%{*/
+            /*background-position: -402px 0;*/
+        /*}*/
+        /*26.7%{*/
+             /*background-position: -536px 0;*/
+        /*}*/
+        /*33.3%{*/
+            /*background-position: 0 -149px;*/
+        /*}*/
+        /*40%{*/
+            /*background-position: -134px -149px;*/
+        /*}*/
+        /*46.7%{*/
+            /*background-position: -268px -149px;*/
+        /*}*/
+        /*53.3%{*/
+            /*background-position: -402px -149px;*/
+        /*}*/
+        /*60%{*/
+            /*background-position: -536px -149px;*/
+        /*}*/
+        /**/
+        /*66.7%{*/
+            /*background-position: 0 -298px;*/
+        /*}*/
+        /*73.3%{*/
+            /*background-position: -134px -298px;*/
+        /*}*/
+        /*80%{*/
+            /*background-position: -268px -298px;*/
+        /*}*/
+        /*86.7%{*/
+            /*background-position: -402px -298px;*/
+        /*}*/
+        /*93.3%{*/
+            /*background-position: -536px -298px;*/
+        /*}*/
+        /*100%{*/
+            /*background-position: 0 0;*/
+        /*}*/
+
+
+    /*}*/
+</style>
+
+
+<body>
+    <div class="box"></div>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    var x=1/15;
+    var anistr='@keyframes fire{';
+    var anix,aniy;
+    anix=0;aniy=0;
+    for(var i=0;i<15;i++){
+        if(i%5==0){
+            anix=0;
+        }else{
+            anix-=134;
+        }
+        if(i%5==0&&i!=0){
+            aniy-=149;
+        }
+        var str=(x*i*100)+"%{background-position:"+anix+"px "+aniy+"px;}";
+        anistr+=str;
+    }
+    anistr+="}";
+    $("<style>").html(anistr).appendTo($("head"));
+</script>
+
+</html>
