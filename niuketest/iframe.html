@@ -4,18 +4,29 @@
     <meta charset="utf-8">
     <title>无标题文档</title>
 </head>
-
+<style>
+    ul{
+        height:400px;
+        width:400px;
+        background:#f56;
+    }
+    iframe{
+        overflow:hidden !important;
+        border:none;
+    }
+</style>
 <body>
-<iframe src="http://localhost:63342/webStudent/niuketest/b.html" name="_iframe" frameborder="1"></iframe>
+<iframe src="http://localhost:63342/webStudent/niuketest/b.html" name="_iframe" frameborder="1" id="myFrame"></iframe>
 <a href="http://www.baidu.com" target="_iframe">韩婷吧</a>
 <ul id="getText"></ul>
 <script>
     var _iframe=document.getElementsByTagName("iframe")[0];
     var txt=_iframe.innerHTML;
-    dosome(txt);
-    function dosome(text){
-        document.getElementById("getText").innerHTML= decodeURI(text);
-    }
+    /*dosome(txt);*/
+    /*function dosome(text){
+
+        document.getElementById("getText").innerHTML=document.getElementById('myFrame').contentWindow.document.getElementById('ct').value;
+    }*/
 </script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+{
+  "name": "gulb",
+  "version": "1.0.0",
+  "description": "韩婷的配置",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "",
+  "license": "ISC"
+}

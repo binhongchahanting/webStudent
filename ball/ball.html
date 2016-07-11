@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvasBall</title>
+    <style>
+        canvas{
+            margin:40px auto;
+            background: #fecab7;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<canvas width="400" height="400" id="canvas">
+
+</canvas>
+</body>
+<script>
+    var _canvas=document.getElementById("canvas");
+    var _context=_canvas.getContext("2d");
+
+    function createBall(){
+        this.a=true;
+        this.b=true;
+        this.color="rgb("+Math.floor(Math.random()*140+100)+","+Math.floor(Math.random()*140+100)+","+Math.floor(Math.random()*140+100)+")";
+        this.radius=Math.floor(Math.random()*20+10);
+        this.standX=Math.floor(Math.random()*300+50);
+        this.standY=Math.floor(Math.random()*300+50);
+        this.run1=Math.floor(Math.random()*10)//小球的运动步长
+        this.run2=Math.floor(Math.random()*10);//
+    }
+    createBall.prototype.ispeed=function(){
+        _context.beginPath();
+        if(this.a){
+            this.standX+=this.run1;
+            if(this.standX>=400-this.radius){
+                this.a=false;
+            }
+        }else{
+            this.standX-=this.run1;
+            if(this.standX<=this.radius){
+                this.a=true;
+            }
+        }
+        if(this.b){
+            this.standY+=this.run2;
+            if(this.standY>=400-this.radius){
+                this.b=false;
+            }
+        }else{
+            this.standY-=this.run2;
+            if(this.standY<=this.radius){
+                this.b=true;
+            }
+        }
+        _context.fillStyle=this.color;
+        _context.arc(this.standX,this.standY,this.radius,0,Math.PI*2);
+        _context.fill();
+        _context.closePath();
+    };
+    var arr=[];
+    for(var i=0;i<200;i++) {
+        arr[i] = new createBall();
+    }
+    setInterval(function(){
+        _context.clearRect(0,0,400,400);
+        for(var i=0;i<arr.length;i++){
+            arr[i].ispeed();
+        }
+    },30);
+</script>
+</html>
