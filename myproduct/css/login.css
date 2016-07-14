@@ -44,6 +44,9 @@ nav{
     margin-top:20px;
     font-size:2rem;
     outline:none;
+    line-height:50px;
+    text-align: center;
+    cursor:pointer;
 }
 .scrollline{
     left:60%;

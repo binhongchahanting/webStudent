@@ -1,0 +1,57 @@
+@num1:768px;
+@num2:992px;
+@num3:1200px;
+@col:12;
+//!实现文字居中
+.text-center{
+  text-align:center;
+}
+//12栅格化
+.widthFluid(@w:100%){
+  width:@w;
+  margin:0 auto;
+}
+.container,.container-fluid{
+  .widthFluid(100%);
+  .row{
+    .widthFluid();
+    .ghb(xs);
+  }
+}
+@media screen and (min-width: @num1){
+  .container{
+    .widthFluid(@num1);
+    .ghb(sm);
+  }
+  .container-fluid{
+    .ghb(sm);
+  }
+}
+@media screen and (min-width: @num2) {
+  .container{
+    .widthFluid(@num2);
+    .ghb(md);
+  }
+  .container-fluid{
+    .ghb(md);
+  }
+}
+@media screen and (min-width: @num3) {
+  .container{
+    .widthFluid(@num3);
+    .ghb(lg);
+  }
+  .container-fluid{
+    .ghb(lg);
+  }
+}
+.ghb(@type,@i:1) when(@i<=12){
+  &>.row>.col-@{type}-@{i}{
+    width:@i/@col*100%;
+    float:left;
+  }
+  &>.row>.col-@{type}-offset-@{i}{
+    margin-left:@i/@col*100%;
+  }
+  .ghb(@type,@i+1);
+}

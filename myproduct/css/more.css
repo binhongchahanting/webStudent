@@ -60,4 +60,6 @@ body{
     cursor: pointer;
     box-shadow: 0 0 5vw #fe8e94;
 }
-
+.scrollline{
+    left:80%;
+}

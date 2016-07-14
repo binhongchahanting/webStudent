@@ -1,0 +1,54 @@
+body{
+    background:#f7f7f7;
+}
+._hid{
+    height:50px !important;
+}
+.title{
+    height:10vw;
+    width:80%;
+    margin:0 auto;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    border:1px solid #c7c7c7;
+    border-radius:8px;
+    overflow: hidden;
+    margin-top:40px;
+}
+.title .son{
+    width:25%;
+    text-align:center;
+    line-height:10vw;
+    background:#f2f2f2;
+    color:#333;
+    border-right:1px solid #c7c7c7;
+    font-size:1.6rem;
+}
+.title .on{
+    background:#f35882;
+    color:#fff;
+}
+.cont{
+    width:80%;
+    margin:0 auto;
+    margin-top:40px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#fff;
+}
+.cont p{
+    height:10vw;
+    line-height:10vw;
+    text-indent:10px;
+    color:#454545;
+}
+.cont p span{
+    color:#898989;
+}
+.cont .p1 span{
+    color:#454545;
+}
+.scrollline{
+    left:60%;
+}

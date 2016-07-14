@@ -1,0 +1,17 @@
+{
+  "name": "webgirl",
+  "version": "1.0.0",
+  "description": "dd",
+  "main": "index.js",
+  "scripts": {
+    "test": "ff"
+  },
+  "keywords": [
+    "hh"
+  ],
+  "author": "gg",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

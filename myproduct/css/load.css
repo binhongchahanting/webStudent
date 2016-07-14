@@ -41,7 +41,7 @@ nav{
 
 }
 .mid .one{
-    color:#ff3aa9;
+    color:#EB4172;
     border:1px solid #adadad;
 }
 .mid p{
@@ -85,8 +85,11 @@ nav{
     color:#fff;
     display:block;
     margin-top:20px;
-    font-size:2rem;
+    font-size:2.2rem;
     outline:none;
+    text-align: center;
+    line-height:50px;
+    cursor: pointer;
 }
 .scrollline{
     left:60%;
