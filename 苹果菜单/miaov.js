@@ -19,7 +19,7 @@ document.onmousemove=function (ev)
 	for(i=0;i<aImg.length;i++)
 	{
 		d=getDistance(aImg[i]);
-		d=Math.min(d, iMax);
+		d=d>iMax?iMax:d;
 		aImg[i].width=((iMax-d)/iMax)*64+64;
 	}
 };

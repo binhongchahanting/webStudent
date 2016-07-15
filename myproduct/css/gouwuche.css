@@ -25,16 +25,15 @@
     color:#fafafa;
     font-size:3.5vw;
     font-weight:700;
-    padding-right:0; height:50px;
+    padding-right:0;
+    height:50px;
 }
 .title ._mony .money{
     color:#ff3aa9;
     font-size:4.5vw;
     margin-left:2%;
 }
-.title ._mony span{
 
-}
 .title ._mony{
     display:flex;
     flex-flow:row nowrap;
@@ -52,10 +51,16 @@
     padding-bottom: 3vw !important;
     border-bottom:1px solid #999;
     box-shadow: 0 0 5px #828282;
-
 }
 .main .pic img{
     max-width:100%;
+}
+.detial .p1 .desc{
+    float:left;
+    width:90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .main .p1 .iconfont{
     float:right;
@@ -118,7 +123,7 @@ footer #_number{
     text-align:center;
     line-height:15px;
     position:absolute;
-    right:24px;
+    right:12px;
     top:2px;
 }
 footer .car .goCar{

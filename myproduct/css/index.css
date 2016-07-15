@@ -82,6 +82,7 @@ body{
     line-height:6vw;
     font-size:5vw !important;
     margin-top:4vw;
+    display:block;
 }
 /*闪屏页*/
 ._start{

@@ -51,6 +51,7 @@ $(function(){
     $.ajax({
         url:"http://datainfo.duapp.com/shopdata/getGoods.php",
         type:"post",
+        async:"fasle",
         dataType:"jsonp",
         success:function(data){
             var img;
@@ -64,13 +65,26 @@ $(function(){
                 $("._context:nth-child(1) .thing .pric .discount").html(data[i]["discount"]+"折");
                 $("._context").eq(0).clone().removeClass("_hidden").appendTo(".total");
             }
+            $("._content").delegate(".icon","tap",function(){
+                var _href=$(this).parent(".thing").parent(".text").siblings("._left").find("a").attr("href");
+                var _index=_href.match(/&.+/g)[0].replace("&","");
+                if(sessionStorage.getItem("state")){
+                    $.ajax({
+                        url:"http://datainfo.duapp.com/shopdata/updatecar.php",
+                        "data":{"userID":sessionStorage.getItem("state"),"goodsID":_index,"number":1},
+                        success:function(data){
+                            if(data){
+                                console.log("成功");
+                            }
+                        }
+                    });
+                }
+            });
             setTimeout(function(){
                 var myScroll;
                 myScroll = new iScroll('wrapper');
                 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-            },300);
+            },1000);
         }
     });
-
-
 });

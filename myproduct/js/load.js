@@ -31,7 +31,7 @@ $(function(){
         }
     });
     touch.on("#target","tap",function(){
-        if(a&&b){
+        if((a&&b)||localStorage.getItem("userID")){
             $.ajax({
                 "url":"http://datainfo.duapp.com/shopdata/userinfo.php",
                 "data":{status:"login",userID:$("#_title").val(),password:$("#_password").val()},
@@ -48,8 +48,10 @@ $(function(){
                       }
                         sessionStorage.setItem("state",$("#_title").val());//登录时会有一个session保存数据
                     }
+                    window.location.href="http://localhost:63342/webStudent/myproduct/index.html"
                 }
-            })
+            });
+
         }
     });
 });
