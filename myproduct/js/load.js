@@ -1,5 +1,9 @@
 $(function(){
     /*checkbox的点击事件*/
+    if(localStorage.getItem("userID")){
+        $("#_title").val(localStorage.getItem("userID"));
+        $("#_password").val(localStorage.getItem("password"));
+    }
     touch.on('.two', 'hold tap doubletap', function(ev){
         $(".yes").toggleClass("_hidden");
     });
@@ -38,11 +42,11 @@ $(function(){
                     }else if(num==0){
                         alert("用户名不存在");
                     }else{
-                      if(!$("#check")[0].checked){
-                          sessionStorage.setItem($("#_title").val(),$("#_password").val());
-                      }else{
-                          localStorage.setItem($("#_title").val(),$("#_password").val());
+                      if($("#check")[0].checked){
+                          localStorage.setItem("userID",$("#_title").val());
+                          localStorage.setItem("password",$("#_password").val())
                       }
+                        sessionStorage.setItem("state",$("#_title").val());//登录时会有一个session保存数据
                     }
                 }
             })

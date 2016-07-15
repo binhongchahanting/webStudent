@@ -68,8 +68,9 @@ $(function(){
                 var myScroll;
                 myScroll = new iScroll('wrapper');
                 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-            },300)
+            },300);
         }
     });
+
 
 });

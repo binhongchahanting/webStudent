@@ -1,0 +1,19 @@
+$(function(){
+if(sessionStorage.getItem("state")){
+    var username=sessionStorage.getItem("state");
+    alert(username);
+    $.ajax({
+        url:"http://datainfo.duapp.com/shopdata/getCar.php",
+        data:{"userID":username},
+        dataType:"jsonp",
+        success:function(data){
+            if(data==0){
+                $("._replace").removeClass("._none");
+                $(".main").addClass("")
+            }
+        }
+    })
+}else{
+   alert(12345);
+}
+});
